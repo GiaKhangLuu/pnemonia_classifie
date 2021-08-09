@@ -1,9 +1,13 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import path from 'path'
+import cors from 'cors'
 import { fileURLToPath } from 'url'
 
 const app = express()
+
+app.use(cors())
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = process.env.PORT || 3000
 
@@ -18,6 +22,6 @@ app.get('/', (req, resp) => {
 	//resp.sendFile('/src/main.html')
 })
 
-app.listen(PORT, () => {
+var server = app.listen(PORT, () => {
 	console.log(`Server is listen on PORT ${ PORT }`)
 })
