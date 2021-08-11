@@ -2,3 +2,4 @@ server/node_modules
 models/vgg16/*.hdf5
 models/resnet18/*.hdf5
 client/models/vgg16_model/*
+client/res/*
