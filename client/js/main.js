@@ -1,4 +1,5 @@
 let model
+const THRESHOLD = 0.7134 * 100
 
 // Load model
 $('document').ready(async () => {
@@ -48,8 +49,19 @@ const preprocess_img = img => {
 
 const show_prediction = prediction => {
 	const result_container = document.getElementById('result_info')
+	//const conclusion_container = document.getElementById('predict_info')
 	console.log(prediction[0])
-	const prob = (prediction[0] * 100).toFixed(4)
-	const result = 'Khả năng bệnh nhân mắc bệnh viêm phổi: ' + prob + '%'
-	result_container.innerText = result
+	let prob = (prediction[0] * 100).toFixed(2)
+	let predict = ''
+	if(prob > THRESHOLD){
+		predict = 'Bệnh nhân bị viêm phổi'
+		prob = prob
+	} else {
+		predict = 'Bệnh nhân không bị viêm phổi' 
+		prob = 100 - prob
+	}
+	const conclusion = 'Chẩn đoán: ' + predict
+	const result = 'Tỷ lệ : ' + prob + '%'
+	result_container.innerText = conclusion + '\n' +result
+	//conclusion_container.innerText = result	
 }

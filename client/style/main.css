@@ -84,7 +84,7 @@ body, html {
 	font-weight: bold;
 }
 
-.result_id {
+.result_id, .predict_id {
 	padding: 10px;
 	margin: 15px;
 	font-size: 16px;
