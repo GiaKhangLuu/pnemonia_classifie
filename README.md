@@ -14,3 +14,10 @@ Dataset is downloaded from: https://www.kaggle.com/datasets/praveengovi/coronaha
 2. Fine tune VGG16 model: https://www.kaggle.com/code/luukhang/transfer-learning-vgg16-to-classifies-pneumonia
 3. Fine tune ResNet model: https://www.kaggle.com/code/luukhang/transfer-learning-resnet18-to-classifies-pneumonia
 
+# Demo
+
+Deploy VGG16 which is the best model during testing using `TensorFlor.JS`
+
+![Demo](./client/asset/demo.png)
+
+
